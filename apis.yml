@@ -1,23 +1,57 @@
 aid: andnothingelse
+
 name: Andnothingelse
+
 description: 'Andnothingelse is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
   and added to the network as a stub for full-pipeline profiling.'
+
 url: https://raw.githubusercontent.com/api-evangelist/andnothingelse/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-24 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-24'
+
 modified: '2026-09-24'
+
 tags:
 - Company
-apis: []
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
+- type: Hosts
+  url: hosts/andnothingelse-hosts.yml
+- type: Vendors
+  url: vendors/andnothingelse-vendors.yml
+- type: DomainSecurity
+  url: security/andnothingelse-domain-security.yml
 - type: Website
   url: https://equityzen.com/company/andnothingelse
+
+apis: []
+
+x-coverage:
+  state: blocked
+  reason: tooling-unavailable
+  detail: "EquityZen blocks access to the company page with HTTP 403, preventing discovery of the provider's domain."
+  evidence:
+    - url: https://equityzen.com/company/andnothingelse
+      status: 403
+  checked: 2026-09-24
+x-enrichment:
+  date: '2026-09-24'
+  status: enriched
+  artifacts_added: 3
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
